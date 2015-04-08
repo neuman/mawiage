@@ -1,0 +1,1 @@
+web: gunicorn mawiage.wsgi --log-file -
