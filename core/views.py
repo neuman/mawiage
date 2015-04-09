@@ -18,5 +18,5 @@ import core.models as cm
 
 class LandingView(ListView):
     model = cm.Chapter
-    queryset = cm.Chapter.objects.order_by('-order')
+    queryset = cm.Chapter.objects.order_by('order')
     template_name = 'base/index.html'
