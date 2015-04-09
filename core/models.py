@@ -17,6 +17,16 @@ MONTH_CHOICES = (
     ('12', 'Dec'),
 )
 
+import os
+import uuid
+
+def upload_to_location(instance, filename):
+    blocks = filename.split('.')
+    ext = blocks[-1]
+    filename = "%s.%s" % (uuid.uuid4(), ext)
+    instance.title = blocks[0]
+    return os.path.join('uploads/', filename)
+
 class Guest(models.Model):
     first_name = models.TextField()
     last_name = models.TextField()
@@ -34,3 +44,21 @@ class Guest(models.Model):
 class Invite(models.Model):
     token = models.TextField()
     guests = models.ManyToManyField(Guest, null=True, blank=True)
+
+
+from ordered_model.models import OrderedModel
+
+class Story(models.Model):
+    title = models.TextField()
+
+class Chapter(OrderedModel):
+    story = models.ForeignKey(Story)
+    title = models.TextField(null=True, blank=True)
+    content = models.TextField(null=True, blank=True)
+    image_file = models.ImageField(upload_to=upload_to_location, null=True, blank=True)
+
+    class Meta(OrderedModel.Meta):
+        pass
+
+    def get_story_title(self):
+        return self.story.title
