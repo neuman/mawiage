@@ -50,7 +50,7 @@
         {% if chapter.pure_html %}
           {% autoescape off %}
             {{ chapter.content }}
-          {% autoescape %}
+          {% endautoescape %}
         {% else %}
           <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{{ chapter.image_file.url }}" data-natural-width="{{ chapter.image_file.width_field }}" data-natural-height="{{ chapter.image_file.height_field }}">
             <div class="container">
