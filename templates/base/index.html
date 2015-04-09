@@ -44,7 +44,22 @@
           </div>
         </div>
       </div>
-  
+
+
+      {% for chapter in object_list %}
+      <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{{ chapter.image_file.url }}" data-natural-width="{{ chapter.image_file.width_field }}" data-natural-height="{{ chapter.image_file.height_field }}">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-4 glass">
+              <h2 id="installation">{{ chapter.title }}</h2>
+              <p>{{ chapter.content }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
 
       <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/benihana.jpg" %}" data-natural-width="960" data-natural-height="640">
         <div class="container">
