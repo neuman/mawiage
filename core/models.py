@@ -55,7 +55,7 @@ class Chapter(OrderedModel):
     story = models.ForeignKey(Story)
     title = models.TextField(null=True, blank=True)
     content = models.TextField(null=True, blank=True)
-    image_file = models.ImageField(upload_to=upload_to_location, null=True, blank=True)
+    image_file = models.ImageField(upload_to=upload_to_location, null=True, blank=True, max_length=400)
 
     class Meta(OrderedModel.Meta):
         pass
