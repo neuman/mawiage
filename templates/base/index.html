@@ -47,187 +47,43 @@
 
 
       {% for chapter in object_list %}
-      <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{{ chapter.image_file.url }}" data-natural-width="{{ chapter.image_file.width_field }}" data-natural-height="{{ chapter.image_file.height_field }}">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8">
-            </div>
-            <div class="col-md-4 glass">
-              <h2 id="installation">{{ chapter.title }}</h2>
-              <p>{{ chapter.content }}</p>
+        {% if chapter.pure_html %}
+          {% autoescape off %}
+            {{ chapter.content }}
+          {% autoescape %}
+        {% else %}
+          <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{{ chapter.image_file.url }}" data-natural-width="{{ chapter.image_file.width_field }}" data-natural-height="{{ chapter.image_file.height_field }}">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8">
+                </div>
+                <div class="col-md-4 glass">
+                  <h2 id="installation">{{ chapter.title }}</h2>
+                  <p>{{ chapter.content }}</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        {% endif %}
       {% endfor %}
-
-      <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/benihana.jpg" %}" data-natural-width="960" data-natural-height="640">
+      <footer>
         <div class="container">
-          <div class="row">
-            <div class="col-md-8">
-            </div>
-            <div class="col-md-4 glass">
-              <h2 id="installation">What is this all about?</h2>
-
-              <p>Eric Neuman & Emily Bergen met in the horror that is Cleveland, OH on the campus of Case Western Reserve University.</p>
-
-              <p>One bitterly cold winter evening at a fraternity house party where the Natty Ice flowed, the two met and it was an instant friendship. Emily liked the Anne Sexton poetry book he “borrowed” from a friend and his flirtatious personality; Eric liked insert first impressions.</p>
-            </div>
-          </div>
+          Parallax.js &copy; 2015 <a href="http://pixelcog.com/">PixelCog Inc.</a> released under <a href="https://github.com/pixelcog/parallax.js/blob/master/LICENSE">MIT license</a><br />
+          All images taken from NASA are <a href="http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html#.U454_JRdXls">public domain</a>.<br /><br />
+          <iframe src="http://ghbtns.com/github-btn.html?user=pixelcog&repo=parallax.js&type=watch&count=true"
+          allowtransparency="true" frameborder="0" scrolling="0" width="85" height="20"></iframe>
+          <iframe src="http://ghbtns.com/github-btn.html?user=pixelcog&repo=parallax.js&type=fork&count=true"
+          allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
         </div>
-      </div>
+      </footer>
+      <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-
-      <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/cab.jpg" %}" data-natural-width="960" data-natural-height="640">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4 glass">
-              <h2>Flash forward to 2009</h2>
-              <p>Emily left for her world trip right as Eric arrived in NYC. After a year’s worth of travel, a handful of facebook messages, and many pining nights, the two met up at Caliente Cab* for their first date** (warm smell of carnitas, rising up through the air)
-                Eric was late because he had gone to the wrong location, but that was soon forgotten after they realized they had both worn neon colored skating shoes. This was also the first time Emily had seen Eric bald. Clearly she was in to it.</p>
-              </div>
-              <div class="col-md-8">
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-
-        <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/fancy.jpg" %}" data-natural-width="960" data-natural-height="640">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8">
-              </div>
-              <div class="col-md-4 glass">
-                <h2 id="installation">It Went Well...</h2>
-                <p>After Caliente Cab they decided to listen to jazz and play scrabble at the classy joint, Fat Cat.
-                  After consuming much beer, they decided to walk off their bloated bellies down the west side river walk (which is much nicer than when Emily was growing up. Also, there used to be a barnes n nobles there).
-                  After walking Eric home like the gentleman she is, they stopped for a moment on the pier. It’s at that fateful moment that Eric asked a question that would change their lives forever:
-                  Would you be offended if i kissed you?</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-
-          <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/costa_rica.jpg" %}" data-natural-width="960" data-natural-height="640">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4 glass">
-                  <h2>Clearly, she was not.</h2>
-                  <p>What followed was a strategic chess game of text messages that eventually lead to their first real date- a movie night watching Despicable Me (and eventually the sequel, Despicable Me 2). All the nights out, dates, cuddles & fights accumulated in a vacation to Belize…</p>
-                  
-                </div>
-                <div class="col-md-8">
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/faces.jpg" %}" data-natural-width="960" data-natural-height="640">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-8">
-                </div>
-                <div class="col-md-4 glass">
-                  <h2 id="installation">A Trip To Belize</h2>
-                  <p>Emily had an inkling that Eric was going to propose- she just kept thinking, “oh god, please don’t bring the RING to BELIZE!”
-                    Eric meanwhile DID have the ring with him in Belize, for two weeks, carefully concealed, wrapped in tissues in a waterproof case around his neck.</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-
-
-
-            <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/vinyard.jpg" %}" data-natural-width="960" data-natural-height="640">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4 glass">
-                    <h2 id="installation">A Romantic Excursion</h2>
-
-                    <p>It was only Emily’s second day when they decided to go hiking in the Cockscomb Jaguar Preserve. They hired a guide, Benedicto, after their last wild life preserve adventure in costa rica (which involved a crocodile, ask us for that story later).
-                      After a full morning of hiking & getting eaten by mosquitos, they took a lunchtime nap before deciding to tackle a really big hill with visions of the waterfall oasis that lay behind it.
-                      While Eric ran up the hill in one leap, Emily is not used to hills and this hike was a challenge for her. She persevered, huffing and puffing and red in the face from the exertion. The view at the top was totally worth it. The beautiful jungles of Belize sprawled out as far as the eye could see.</p>
-                    </div>
-                    <div class="col-md-8">
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/superold.jpg" %}" data-natural-width="720" data-natural-height="540">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-8">
-                    </div>
-                    <div class="col-md-4 glass">
-                      <h2 id="installation">Waterfalls, Diamonds, The Works</h2>
-                      <p>Just a short distance later, they were at the waterfall where they swam and lounged while little fishies nibbled at their feet. Indulging in the serenity of the falls, Eric decided this was the perfect moment. He got out of the water and returned just a few seconds later. Sitting next to Emily, as equals, he asked “will you marry me?”
-                        Emily’s response? D’uh! omg yes!</p>
-
-                        <p>*Yes, we still have the Caliente Cab glasses from that night.</p>
-                        <p>**Emily swears to this day that she did not know this was a date’ she thought Eric just had a really flirtatious personality</p>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-<iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1428508360126!6m8!1m7!1s72vCqV9CSLwAAAQfCWuHsA!2m2!1d16.79852!2d-88.385453!3f119!4f0!5f0.7820865974627469" width="100%" height="110%" frameborder="0" style="border:0"></iframe>
-                <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/bear_mountain.jpg" %}" data-natural-width="4128" data-natural-height="2322">
-                  <div class="container">
-                <div class="row">
-                  <div class="col-md-4 glass">
-                    <h2>And that just about catches everyone up to what we’re planning.</h2>
-                    </div>
-                    <div class="col-md-8">
-                    </div>
-                  </div>
-                    
-                    </div>
-                </div>
-
-                <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/cowboy.jpg" %}" data-natural-width="4128" data-natural-height="2322">
-                  <div class="container">
-                    <div class="row">
-                    <div class="col-md-8">
-                    </div>
-                    <div class="col-md-4 glass">
-                      <h2>What To Wear</h2>
-                        <p>I’m sure you own some lovely items. Our main request is that our guests are comfortable and don’t wear anything you don’t want to wear. If you don’t like dresses, we don’t expect to see you in one, that being said, if you do like to dress up, we encourage it! </p>
-                        <p>We are going to be art-deco themed/black-tie optional</p>
-                        <p>Most importantly, make sure it’s something you can groove in, because we expect a full night of dancing.</p>
-                        <p>If it’s nice out, there’s a chance that the cocktail hour will take place outside. Please be prepared for whatever the weather brings.</p>
-                    </div>
-                    </div>
-                  
-                  </div>
-                </div>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3189.3595300437696!2d-73.94937200000037!3d40.753986009977226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258d9e9c062dd%3A0x4c14d0370f39d398!2sPenthouse808!5e1!3m2!1sen!2sus!4v1428467034579" width="100%" height="400" frameborder="0" style="border:0"></iframe>
-                <footer>
-                  <div class="container">
-                    Parallax.js &copy; 2015 <a href="http://pixelcog.com/">PixelCog Inc.</a> released under <a href="https://github.com/pixelcog/parallax.js/blob/master/LICENSE">MIT license</a><br />
-                    All images taken from NASA are <a href="http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html#.U454_JRdXls">public domain</a>.<br /><br />
-                    <iframe src="http://ghbtns.com/github-btn.html?user=pixelcog&repo=parallax.js&type=watch&count=true"
-                    allowtransparency="true" frameborder="0" scrolling="0" width="85" height="20"></iframe>
-                    <iframe src="http://ghbtns.com/github-btn.html?user=pixelcog&repo=parallax.js&type=fork&count=true"
-                    allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
-                  </div>
-                </footer>
-                <script type="text/javascript">
-                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-                  ga('create', 'UA-20587204-9', 'auto');
-                  ga('send', 'pageview');
-                </script>
-              </body>
-              </html>
+        ga('create', 'UA-20587204-9', 'auto');
+        ga('send', 'pageview');
+      </script>
+    </body>
+    </html>
