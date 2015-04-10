@@ -62,8 +62,14 @@ class Chapter(OrderedModel):
     class Meta(OrderedModel.Meta):
         pass
 
+    def __str__(self):
+        return self.title
+
     def get_story_title(self):
         return self.story.title
 
     def get_anchor_string(self):
         return self.menu_item.replace(" ","")
+
+    def is_menu_item(self):
+        return (self.menu_item != "") and (self.menu_item != None)

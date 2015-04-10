@@ -48,7 +48,7 @@
           <div class="row glass">
           <div class="header-nav">
           {% for chapter in object_list %}
-            {% if chapter.menu_item != "" %}
+            {% if chapter.is_menu_item %}
             <div class="col-md-3 text-center">
               <h2><a class="page-scroll" href="#{{ chapter.get_anchor_string }}">{{ chapter.menu_item }}</a></h2>
             </div>
