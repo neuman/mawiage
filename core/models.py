@@ -55,6 +55,7 @@ class Chapter(OrderedModel):
     story = models.ForeignKey(Story)
     title = models.TextField(null=True, blank=True)
     content = models.TextField(null=True, blank=True)
+    menu_item = models.TextField(null=True, blank=True)
     image_file = models.ImageField(upload_to=upload_to_location, max_length=400, null=True, blank=True)
     pure_html = models.BooleanField(default=False)
 
@@ -63,3 +64,6 @@ class Chapter(OrderedModel):
 
     def get_story_title(self):
         return self.story.title
+
+    def get_anchor_string(self):
+        return self.menu_item.replace(" ","")
