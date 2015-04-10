@@ -61,7 +61,7 @@
 
 
       {% for chapter in object_list %}
-      <div {% if chapter.menu_item != None %}id="{{ chapter.menu_item }}"{% endif %}></div>
+      <div {% if chapter.menu_item != None %}id="{{ chapter.get_anchor_string }}"{% endif %}></div>
 
         {% if chapter.pure_html %}
           {% autoescape off %}
