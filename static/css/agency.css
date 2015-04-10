@@ -925,10 +925,13 @@ html {height:100%;}
     background-color:rgba(0, 0, 0, 0.5)
 }
 
-.glass h2{
+.glass h2, footer h1, footer h2{
     font-family: 'uppereastsideregular';
 }
 
 .parallax-container{
       padding-top: 20px;
+}
+
+.header-nav{
 }
