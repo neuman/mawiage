@@ -61,7 +61,7 @@
 
 
       {% for chapter in object_list %}
-      <div {% if chapter.menu_item != None %}id="{{ chapter.menu_item }}"{% endif %}>
+      <div {% if chapter.menu_item != None %}id="{{ chapter.menu_item }}"{% endif %}></div>
 
         {% if chapter.pure_html %}
           {% autoescape off %}
@@ -83,7 +83,6 @@
             </div>
           </div>
         {% endif %}
-        </div>
       {% endfor %}
       <footer>
         <div class="container">
