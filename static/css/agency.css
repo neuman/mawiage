@@ -944,3 +944,9 @@ html {height:100%;}
 .fill-height{
     min-height:100%;
 }
+
+.parallax-container {
+  height: 500px;
+  width: 100%;
+  min-height: 110%;
+}

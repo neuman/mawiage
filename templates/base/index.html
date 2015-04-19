@@ -34,7 +34,7 @@
     </head>
     <body>
 
-      <div class="parallax-container picover stained-glass text-center" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/header.jpg" %}" data-natural-width="960" data-natural-height="640">
+      <div class="parallax-container desktop-fill-height picover stained-glass text-center" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% static "img/header.jpg" %}" data-natural-width="960" data-natural-height="640">
         <div class="container">
           <div class="row glass">
         <h2>November 8th, 2015</h2>
@@ -71,7 +71,7 @@
             {{ chapter.content }}
           {% endautoescape %}
         {% else %}
-          <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% if chapter.image_file %}{{ chapter.image_file.url }}{% endif %}" data-natural-width="{{ chapter.image_file.width_field }}" data-natural-height="{{ chapter.image_file.height_field }}">
+          <div class="parallax-container desktop-fill-height picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% if chapter.image_file %}{{ chapter.image_file.url }}{% endif %}" data-natural-width="{{ chapter.image_file.width_field }}" data-natural-height="{{ chapter.image_file.height_field }}">
             <div class="container">
               <div class="row">
               {% if chapter.is_left_aligned %}

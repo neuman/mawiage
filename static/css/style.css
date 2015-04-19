@@ -3,11 +3,7 @@ section {
   background: #fff;
 }
 
-.parallax-container {
-  height: 500px;
-  width: 100%;
-  min-height: 110%;
-}
+
 
 pre {
   overflow: auto;
