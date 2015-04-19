@@ -893,8 +893,11 @@ html {height:100%;}
     color:#fff;
     text-shadow: -4px 3px 0 #3a50d9, -14px 7px 0 #0a0e27;
 }
-.stained-glass h1{
-    font-size: 100px;
+
+@media(min-width:768px) {
+    .stained-glass h1{
+        font-size: 100px;
+    }
 }
 
 .jumbotron .img-responsive {
@@ -929,6 +932,8 @@ html {height:100%;}
     font-family: 'uppereastsideregular';
 }
 
+
+
 .parallax-container{
       padding-top: 20px;
 }
@@ -937,5 +942,5 @@ html {height:100%;}
    pointer-events: none;
 }
 .fill-height{
-    height:100%;
+    min-height:100%;
 }
