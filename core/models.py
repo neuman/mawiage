@@ -74,7 +74,10 @@ class Chapter(OrderedModel):
         pass
 
     def __str__(self):
-        return self.title
+        try:
+            return self.title
+        except Exception as e:
+            return "error"
 
     def get_story_title(self):
         return self.story.title

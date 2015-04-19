@@ -953,3 +953,5 @@ html {height:100%;}
 .desktop-fill-height {
   min-height: 110%;
 }
+
+div#preload { display: none; }
