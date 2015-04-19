@@ -18,17 +18,7 @@
 
       <script src="{% static "js/bootstrap.min.js" %}"></script>
       <script>
-        $(function(){
-          if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-            $('#ios-notice').removeClass('hidden');
-            $('.parallax-container').height( $(window).height() * 0.5 | 0 );
-          } else {
-            $(window).resize(function(){
-              var parallaxHeight = Math.max($(window).height() * 0.7, 200) | 0;
-              $('.parallax-container').height(parallaxHeight);
-            }).trigger('resize');
-          }
-        });
+
       </script>
       <script src="{% static "js/parallax.min.js" %}"></script>
     </head>
@@ -71,7 +61,7 @@
             {{ chapter.content }}
           {% endautoescape %}
         {% else %}
-          <div class="parallax-container desktop-fill-height picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% if chapter.image_file %}{{ chapter.image_file.url }}{% endif %}" data-natural-width="{{ chapter.image_file.width_field }}" data-natural-height="{{ chapter.image_file.height_field }}">
+          <div class="parallax-container desktop-fill-height picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% if chapter.image_file %}{{ chapter.image_file.url }}{% else %}{% static "img/header.jpg" %}{% endif %}" data-natural-width="{{ chapter.image_file.width_field }}" data-natural-height="{{ chapter.image_file.height_field }}">
             <div class="container">
               <div class="row">
               {% if chapter.is_left_aligned %}

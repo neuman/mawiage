@@ -946,7 +946,12 @@ html {height:100%;}
 }
 
 .parallax-container {
-  height: 500px;
   width: 100%;
-  min-height: 110%;
+  height: auto;
+}
+
+@media(min-width:768px) {
+    .desktop-fill-height {
+      min-height: 110%;
+    }
 }
