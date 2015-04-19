@@ -15,6 +15,7 @@
       <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
       <script src="{% static "js/jquery.min.js" %}"></script>
+
       <script src="{% static "js/bootstrap.min.js" %}"></script>
       <script>
         $(function(){
@@ -41,6 +42,7 @@
         <h2>&</h2>
         <h1>Eric Neuman</h1>
         <h2>Long Island City, New York</h2>
+        <h2>Penthouse 808</h2>
         <h2>4:00 pm</h2>
         <h1><br></h1>
           </div>
@@ -64,21 +66,31 @@
       {% for chapter in object_list %}
       <div {% if chapter.menu_item != None %}id="{{ chapter.get_anchor_string }}"{% endif %}></div>
 
-        {% if chapter.pure_html %}
+        {% if chapter.is_pure_html %}
           {% autoescape off %}
             {{ chapter.content }}
           {% endautoescape %}
         {% else %}
-          <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{{ chapter.image_file.url }}" data-natural-width="{{ chapter.image_file.width_field }}" data-natural-height="{{ chapter.image_file.height_field }}">
+          <div class="parallax-container picover" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="{% if chapter.image_file %}{{ chapter.image_file.url }}{% endif %}" data-natural-width="{{ chapter.image_file.width_field }}" data-natural-height="{{ chapter.image_file.height_field }}">
             <div class="container">
               <div class="row">
-              {% if forloop.counter|divisibleby:2 %}
+              {% if chapter.is_left_aligned %}
+              {% elif chapter.is_right_aligned %}
                 <div class="col-md-8">
                 </div>
+              {% else %}
+                {% if forloop.counter|divisibleby:2 %}
+                  <div class="col-md-8">
+                  </div>
+                {% endif %}
               {% endif %}
                 <div class="col-md-4 glass">
                   <h2 id="installation">{{ chapter.title }}</h2>
-                  <p>{{ chapter.content|linebreaksbr}}</p>
+                  {% if chapter.is_content_html %}
+                    <p>{{ chapter.content|safe}}</p>
+                  {% else %}
+                    <p>{{ chapter.content|linebreaksbr}}</p>
+                  {% endif %}
                 </div>
               </div>
             </div>

@@ -17,6 +17,16 @@ MONTH_CHOICES = (
     ('12', 'Dec'),
 )
 
+ALIGNMENT_CHOICES = (
+    ('L', 'Left'),
+    ('R', 'Right'),
+)
+
+CONTENT_CHOICES = (
+    ('C', 'HTML Content'),
+    ('P', 'Pure HTML'),
+)
+
 import os
 import uuid
 
@@ -53,11 +63,12 @@ class Story(models.Model):
 
 class Chapter(OrderedModel):
     story = models.ForeignKey(Story)
+    alignment = models.CharField(choices=ALIGNMENT_CHOICES, max_length=400, null=True, blank=True)
     title = models.TextField(null=True, blank=True)
     content = models.TextField(null=True, blank=True)
     menu_item = models.TextField(null=True, blank=True)
     image_file = models.ImageField(upload_to=upload_to_location, max_length=400, null=True, blank=True)
-    pure_html = models.BooleanField(default=False)
+    content_style = models.CharField(choices=CONTENT_CHOICES, max_length=10, null=True, blank=True)
 
     class Meta(OrderedModel.Meta):
         pass
@@ -73,3 +84,15 @@ class Chapter(OrderedModel):
 
     def is_menu_item(self):
         return (self.menu_item != "") and (self.menu_item != None)
+
+    def is_pure_html(self):
+        return self.content_style == "P"
+
+    def is_content_html(self):
+        return self.content_style == "C"
+
+    def is_left_aligned(self):
+        return self.alignment == "L"
+
+    def is_right_aligned(self):
+        return self.alignment == "R"
