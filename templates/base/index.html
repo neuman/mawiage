@@ -98,11 +98,6 @@ fall in mutual weirdness and call it love."</h1>
 Mawiage &copy; 2015 <a href="http://theneuman.com/">Eric Neuman </a> released under <a href="https://github.com/pixelcog/parallax.js/blob/master/LICENSE">MIT license</a><br />
         </div>
       </footer>
-      <div id="">
-        {% for chapter in object_list %}
-         <img src="{% if chapter.image_file %}{{ chapter.image_file.url }}{% endif %}" width="1" height="1" />
-        {% endfor %}
-      </div>
       <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
       <script src="{% static "js/main.js" %}"></script>
     </body>
