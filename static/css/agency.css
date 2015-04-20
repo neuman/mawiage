@@ -925,7 +925,7 @@ html {height:100%;}
 
 
 .glass {
-    background-color:rgba(0, 0, 0, 0.5)
+    background-color:rgba(0, 0, 0, 0.5);
 }
 
 .glass h2, .glass h1, footer h1, footer h2, .textbar h1{
